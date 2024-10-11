@@ -30,8 +30,15 @@ def almost_there(lst: list[int], n: int) -> int:
             count += 1
     return count
 
-print(almost_there([6, 2, 4, 3, 5], 2))
-
-def move_to_back(lst: list[int], values: list[int]) -> list[int]:
-    for i in range(len(lst)):
-        pass
+def move_to_back(lst, values):
+    to_move = []
+    for j in values:
+        i = 0
+        while i < len(lst):
+            if lst[i]  == j:
+                to_move.append(lst.pop(i))
+            else:
+                i += 1
+    for elem in to_move:
+        lst.append(elem)
+        
