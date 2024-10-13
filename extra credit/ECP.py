@@ -1,4 +1,23 @@
+"""
+Course  : CMPSC 131, Fall 2024
+File    : ECP.py 
+Name    : Ryan McWeeny
+
+GitHub User:   Ryanrob327
+
+Collaboration Statement: I worked on this assignment by myself, using only course materials
+"""
+
 def dot_product(lst1: list[int], lst2: list[int]) -> int:
+    """
+        multiplies index of each list by corresponding index of other list respectively and add all products together
+
+        Input:
+        lst1 list[int]: first list, lst2 list[int]: second list
+
+        Output: 
+        [int] sum of dot products
+    """
     length: int = 0
     sum: int = 0
     if len(lst1) <= len(lst2):
@@ -10,7 +29,16 @@ def dot_product(lst1: list[int], lst2: list[int]) -> int:
     return sum
 
 def is_balanced(a_str: str) -> bool:
-    parentheses_count = 0
+    """
+        checks if string has balanced parenthesis, if so, returns true, otherwise, returns false
+
+        Input:
+        a_str [str]: string to check for parenthesis
+
+        Output:
+        [bool] balanced parenthesis or not
+    """
+    parentheses_count: int = 0
     for char in a_str:
         if char == '(':
             parentheses_count += 1
@@ -24,14 +52,32 @@ def is_balanced(a_str: str) -> bool:
         return False 
     
 def almost_there(lst: list[int], n: int) -> int:
+    """
+        returns how many elements of the list are within "n" of the respective element's index
+
+        Input:
+        lst [list[int]]: list of elements to check, n [int]: number to check against elements from lst
+
+        Output:
+        [int] number of elements in lst within "n" of the respective elements index
+    """
     count: int = 0
     for i in range(len(lst)):
         if (lst[i] >= i - n) and (lst[i] <= i + n):
             count += 1
     return count
 
-def move_to_back(lst, values):
-    to_move = []
+def move_to_back(lst: list[int], values: list[int]):
+    """
+        mutates list so that each element in list that also appears in "values" is moved to the back of the list
+        
+        Input:
+        lst [list[int]]: list of elements to mutate, values [list[int]]: list of numbers to move to back of lst
+
+        Output:
+        [void] function returns void but mutates lst
+    """
+    to_move: list[int] = []
     for j in values:
         i = 0
         while i < len(lst):
