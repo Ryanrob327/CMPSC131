@@ -8,6 +8,30 @@ GitHub User:   Ryanrob327
 Collaboration Statement: I worked on this assignment by myself, using only course materials
 """
 
+def title_case(string: str) -> str:
+    """
+        properly capitalizes string by capitalizing first letter of each word and lower casing every other letter
+
+        Input:
+        string [str]: string to be modified into proper capitalization
+
+        Output: 
+        [str] properly capitalized string
+    """
+    words: str = string.split()
+    result: list[str] = []
+    for word in words:
+        new_word: str = ""
+        for i, char in enumerate(word):
+            if i == 0 and 'a' <= char <= 'z':
+                new_word += chr(ord(char) - 32)
+            elif i != 0 and 'A' <= char <= 'Z':
+                new_word += chr(ord(char) + 32)
+            else:
+                new_word += char 
+        result.append(new_word)
+    return ' '.join(result)
+
 def dot_product(lst1: list[int], lst2: list[int]) -> int:
     """
         multiplies index of each list by corresponding index of other list respectively and add all products together
